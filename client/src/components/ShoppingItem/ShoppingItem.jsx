@@ -7,8 +7,7 @@ class ShoppingItem extends Component {
   }
 
   render() {
-    let { name } = this.props;
-    let { check } = this.props;
+    let { name, check } = this.props;
 
     return (
       <div>
