@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ShoppingItem from '../ShoppingItem/ShoppingItem'
 
 class ShoppingList extends Component {
     constructor(props) {
@@ -8,11 +9,12 @@ class ShoppingList extends Component {
     };
 
     render() {
+
         return (
           <div>
-            <div className="shoppingItem">Milk</div>
-            <div className="shoppingItem">Banana</div>
-            <div className="shoppingItem">Apple</div>
+            <ShoppingItem name={'Milk'}/>
+            <ShoppingItem name={'Banana'}/>
+            <ShoppingItem name={'Apple'}/>
           </div>
         );
     }
