@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import UIShell from "./components/UIShell";
 import "./App.scss";
 import ShoppingList from "./components/ShoppingList/ShoppingList";
 
