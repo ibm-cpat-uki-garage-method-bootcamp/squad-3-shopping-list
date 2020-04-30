@@ -1,6 +1,5 @@
 {
   "name": "template-node-react",
-  "version": "1.0.0",
   "org": "yourorg",
   "description": "12 UI Patterns written with React and Node.js",
   "private": true,
@@ -44,5 +43,21 @@
     "nodemon": "^1.12.1",
     "supertest": "^4.0.2",
     "sonarqube-scanner": "^2.5.0"
+  },
+  "release-it": {
+    "git": {
+      "tagName": "v${version}",
+      "commitMessage": "Release ${version}\n[skip ci]"
+    },
+    "github": {
+      "release": true
+    }
+  },
+  "hooks": {
+    "before:init": [
+      "npm test"
+    ],
+    "after:bump": "npm run build",
+    "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}."
   }
 }
