@@ -28,9 +28,9 @@ describe("ShoppingList component", () => {
     });
 
     it('shows the initial contents of the list', function () {
-        expect(wrapper.find(ShoppingItem).at(0).text()).toEqual("Milk");
-        expect(wrapper.find(ShoppingItem).at(1).text()).toEqual("Banana");
-        expect(wrapper.find(ShoppingItem).at(2).text()).toEqual("Apple");
+        expect(wrapper.find('label').at(0).text()).toEqual("Milk");
+        expect(wrapper.find('label').at(1).text()).toEqual("Banana");
+        expect(wrapper.find('label').at(2).text()).toEqual("Apple");
     });
 
     it('shows a form with label, text-box and button', function () {
@@ -71,7 +71,7 @@ describe("ShoppingList component", () => {
 
             it("shows a new item", function() {
                 expect(wrapper.find(ShoppingItem)).toHaveLength(4);
-                expect(wrapper.find(ShoppingItem).at(3).text()).toEqual("Test");
+                expect(wrapper.find('label').at(3).text()).toEqual("Test");
             });
 
         //     it("stores the items in local storage", () => {
@@ -122,7 +122,7 @@ describe("ShoppingList component", () => {
 
                 it("shows a new item", function() {
                     expect(wrapper.find(ShoppingItem)).toHaveLength(4);
-                    expect(wrapper.find(ShoppingItem).at(3).text()).toEqual("Test2");
+                    expect(wrapper.find('label').at(3).text()).toEqual("Test2");
                 });
     
                 it("stores the items in local storage", () => {

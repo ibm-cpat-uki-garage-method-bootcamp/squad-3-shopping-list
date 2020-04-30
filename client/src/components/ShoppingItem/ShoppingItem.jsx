@@ -13,6 +13,7 @@ class ShoppingItem extends Component {
       <div>
         <input type="checkbox" value={name} checked={check} />
         <label>{name}</label>
+        <button>x</button>
       </div>
     );
   }

@@ -24,6 +24,12 @@ describe("ShoppingItem component", () => {
     expect(wrapper.childAt(0).prop("type")).toBe("checkbox");
   });
 
+  it("should render an x next to the item", () => {
+    let wrapper = shallow(<ShoppingItem />);
+    expect(wrapper.childAt(2).type()).toBe("button");
+    expect(wrapper.childAt(2).text()).toEqual("x");
+  });
+
   it("should render the name of the item", () => {
     for (name of ["Milk", "Butter"]) {
       let wrapper = shallow(<ShoppingItem name={name} />);
@@ -48,5 +54,5 @@ describe("ShoppingItem component", () => {
   it("should not render a checkbox for an item that is not checked", () => {
     let wrapper = shallow(<ShoppingItem name="Milk" check={false} />);
     expect(wrapper.childAt(0).prop("checked")).toBeFalsy();
-  });
+  })
 });
