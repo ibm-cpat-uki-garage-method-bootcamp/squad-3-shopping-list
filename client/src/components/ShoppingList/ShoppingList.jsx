@@ -1,14 +1,15 @@
 import React, { Component } from "react";
 import ShoppingItem from '../ShoppingItem/ShoppingItem'
+import ShoppingListStorage from "./ShoopingListStorage"
 
 class ShoppingList extends Component {
     constructor(props) {
       super(props);
+      this.storage = new ShoppingListStorage();
       this.state = {
-        items: ['Milk', 'Banana', 'Apple'],
+        items: this.storage.retrieve('jeff'),
         prov: "",
       };
-
     };
 
     handleChange = (e) => {
@@ -19,9 +20,11 @@ class ShoppingList extends Component {
 
     handleSubmit = (e) => {
       e.preventDefault();
+      const items = [...this.state.items, this.state.prov]
       this.setState({
-        items: [...this.state.items, this.state.prov]
+        items
       })
+      this.storage.store('jeff', items);
     }
 
     render() {

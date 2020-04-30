@@ -4,7 +4,7 @@ class ShoppingListStorage {
     }
 
     retrieve = (user) => {
-        return JSON.parse(window.localStorage.getItem(user));
+        return JSON.parse(window.localStorage.getItem(user)) || ['Milk', 'Banana', 'Apple'];
     }
 };
 
