@@ -22,7 +22,8 @@ class ShoppingList extends Component {
       e.preventDefault();
       const items = [...this.state.items, this.state.prov]
       this.setState({
-        items
+        items,
+        prov: ""
       })
       this.storage.store('jeff', items);
     }
@@ -34,7 +35,7 @@ class ShoppingList extends Component {
       return (
         <div>
           {listOfItems}
-          <form onSubmit={this.handleSubmit}>
+          <form id="create-course-form" onSubmit={this.handleSubmit}>
             <label>Item:</label>
             <input type="text" value={this.state.prov} onChange={this.handleChange} />
             <button>Add Item</button>

@@ -128,7 +128,12 @@ describe("ShoppingList component", () => {
                 it("stores the items in local storage", () => {
                     const items = window.localStorage.getItem("jeff");
                     expect(items).toEqual(JSON.stringify(["Milk", "Banana", "Apple", "Test2"]));
-                });    
+                });
+
+                it("should clear the text box", () => {
+                    let textBox = wrapper.find("form input").at(0)
+                    expect(textBox.prop("value")).toEqual("");
+                });
             });    
         });
     });
